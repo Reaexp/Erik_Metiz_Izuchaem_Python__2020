@@ -90,3 +90,4 @@ while True:
     full_album = make_album(name, album)
     print(full_album)
     break
+test
