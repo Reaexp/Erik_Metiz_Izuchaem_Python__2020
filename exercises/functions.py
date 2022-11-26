@@ -21,7 +21,72 @@
 # make_shirt("52","hello world")
 
 # 8.5
-def discribe_city(city, country="Россия"):
-    print(f" {country.title()} великая страна. В ней есть город '{city.title()}'.")
-discribe_city("Москва")
-discribe_city("Владивосток")
+# def discribe_city(city, country="Россия"):
+#     print(f" {country.title()} великая страна. В ней есть город '{city.title()}'.")
+# discribe_city("Москва")
+# discribe_city("Владивосток")
+
+# 8.6
+# def city_country(city, country):
+#     general_name = (f"{city}, {country}").title()
+#     return general_name
+#
+# purpose = city_country("россия", "москва")
+# print(purpose)
+
+
+# def city_country(city, country):
+#     general_name = f"\"{city}\", \"{country}\""
+#     return general_name.title()
+#
+#
+# purpose = city_country("россия", "москва")
+# print(purpose)
+# purpose = city_country("беларусь", "минск")
+# print(purpose)
+# purpose = city_country("россия", "киев")
+# print(purpose)
+
+
+# 8.7
+# def make_album(artist_name, album_title):
+#     musician = {'a_name': artist_name.title(), 'a_title': album_title.upper()}
+#     return musician
+#
+#
+# album = make_album('пугачева', 'Алые паруса')
+# print(album)
+# album = make_album('галкин', 'петушок')
+# print(album)
+
+
+# def make_album(artist_name, album_title, track = None):
+#     musician = {'a_name': artist_name.title(), 'a_title': album_title.upper()}
+#     if track:
+#         musician['track'] = track
+#     return musician
+#
+#
+# album = make_album('пугачева', 'Алые паруса')
+# print(album)
+# album = make_album('галкин', 'петушок', 23)
+# print(album)
+
+# 8.8
+def make_album(artist_name, album_title):
+    album = {'a_name': artist_name.title(), 'a_title': album_title.upper()}
+    return album
+
+while True:
+    print('Введите имя артиста и название альбома. ')
+    print('Для остановки программы напишите "Обама Чмо"')
+
+    name = input("имя: ")
+    if "Обама Чмо" == name:
+        break
+    album = input("альбом: ")
+    if "Обама Чмо" == album:
+        break
+    full_album = make_album(name, album)
+    print(full_album)
+    break

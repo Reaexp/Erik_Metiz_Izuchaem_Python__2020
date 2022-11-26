@@ -32,21 +32,21 @@
 # print(musician)
 
 
-# def build_person(first_name, last_name):
-#     """Возвращает словарь с информацией о человеке."""
-#     person = {'first': first_name, 'last': last_name}
-#     return person
-#
-# musician = build_person('алекс', 'reaexp')
-# print(musician)
-
-
-def build_person(first_name, last_name, age = None):
+def build_person(first_name, last_name):
     """Возвращает словарь с информацией о человеке."""
     person = {'first': first_name, 'last': last_name}
-    if age:
-        person['age'] = age
     return person
 
-musician = build_person('алекс', 'reaexp', age = 35 )
+musician = build_person('алекс', 'reaexp')
 print(musician)
+
+
+# def build_person(first_name, last_name, age = None):
+#     """Возвращает словарь с информацией о человеке."""
+#     person = {'first': first_name, 'last': last_name}
+#     if age:
+#         person['age'] = age
+#     return person
+#
+# musician = build_person('алекс', 'reaexp', age = 35 )
+# print(musician)
