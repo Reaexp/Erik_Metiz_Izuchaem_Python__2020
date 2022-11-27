@@ -73,20 +73,58 @@
 # print(album)
 
 # 8.8
-def make_album(artist_name, album_title):
-    album = {'a_name': artist_name.title(), 'a_title': album_title.upper()}
-    return album
+# def make_album(artist_name, album_title):
+#     album = {'a_name': artist_name.title(), 'a_title': album_title.upper()}
+#     return album
+#
+# while True:
+#     print('Введите имя артиста и название альбома. ')
+#     print('Для остановки программы напишите "Обама Чмо"')
+#
+#     name = input("имя: ")
+#     if "Обама Чмо" == name:
+#         break
+#     album = input("альбом: ")
+#     if "Обама Чмо" == album:
+#         break
+#     full_album = make_album(name, album)
+#     print(full_album)
+#     break
 
-while True:
-    print('Введите имя артиста и название альбома. ')
-    print('Для остановки программы напишите "Обама Чмо"')
+# 8.9
+# message_list = ["Hello!", "how do you do?", "whatsapp man?"]
+#
+# def show_messages(message_list):
+#     while message_list:
+#         print(message_list.pop(0))
+#
+# show_messages(message_list)
 
-    name = input("имя: ")
-    if "Обама Чмо" == name:
-        break
-    album = input("альбом: ")
-    if "Обама Чмо" == album:
-        break
-    full_album = make_album(name, album)
-    print(full_album)
-    break
+# 8.10
+# send_messages = ["Hello!", "how do you do?", "whatsapp man?"]
+# sent_messages = []
+#
+# def show_messages(send_messages):
+#     while send_messages:
+#         message = send_messages.pop(0)
+#         print(message)
+#         sent_messages.append(message)
+#
+# show_messages(send_messages)
+#
+# print(sent_messages)
+
+# 8.11
+send_messages = ["Hello!", "how do you do?", "whatsapp man?"]
+sent_messages = []
+
+def show_messages(send_messages):
+    while send_messages:
+        message = send_messages.pop(0)
+        print(message)
+        sent_messages.append(message)
+
+show_messages(send_messages[:])
+
+print(send_messages)
+print(sent_messages)
