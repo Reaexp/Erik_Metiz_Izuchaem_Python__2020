@@ -115,16 +115,16 @@
 # print(sent_messages)
 
 # 8.11
-send_messages = ["Hello!", "how do you do?", "whatsapp man?"]
-sent_messages = []
-
-def show_messages(send_messages):
-    while send_messages:
-        message = send_messages.pop(0)
-        print(message)
-        sent_messages.append(message)
-
-show_messages(send_messages[:])
-
-print(send_messages)
-print(sent_messages)
+# send_messages = ["Hello!", "how do you do?", "whatsapp man?"]
+# sent_messages = []
+#
+# def show_messages(send_messages):
+#     while send_messages:
+#         message = send_messages.pop(0)
+#         print(message)
+#         sent_messages.append(message)
+#
+# show_messages(send_messages[:])
+#
+# print(send_messages)
+# print(sent_messages)
