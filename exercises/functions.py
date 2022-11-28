@@ -128,3 +128,35 @@
 #
 # print(send_messages)
 # print(sent_messages)
+
+
+# 8.12
+# def sendwich(comp1, comp2, *other_comps):
+#     print(comp1)
+#     print(comp2)
+#     for i in other_comps:
+#         print(i)
+#
+# sendwich('sosige', 'mushroom')
+#
+# sendwich('sosige', 'mushroom', 'test', 'test2')
+
+
+# 8.13
+# def build_profile(first, last, **user_info):
+#     user_info['first_name'] = first
+#     user_info['last_name'] = last
+#     return user_info
+#
+# user_profile = build_profile('alex', 'reaexp', location = 'moscow', filed = 'bezbelnik' )
+# print(user_profile)
+
+
+# 8.14
+def make_car(car_brand, type_of_car, **other):
+    other['car_brande'] = car_brand
+    other['type_of_car'] = type_of_car
+    return other
+
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+print(car)
