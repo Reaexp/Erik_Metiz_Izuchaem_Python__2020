@@ -1,121 +1,64 @@
-# class Car():
-#     """A simple car model."""
-#     def __init__(self, manufacturer, model, year):
-#         """Initializes the attributes of the vehicle description."""
-#         self.manufacturer = manufacturer
-#         self.model = model
-#         self.year = year
-#
-#     def get_descriptive_name(self):
-#         """Returns a neatly formatted description."""
-#         long_name = f"{self.year} {self.manufacturer} {self.model}"
-#         return long_name.title()
-#
-# my_new_car = Car('audi', 'a4', 2019)
-# print(my_new_car.get_descriptive_name())
-#
-# my_new_car_2 = Car('bmw', 'turbond', 2022)
-# print(my_new_car_2.get_descriptive_name())
-
-
-# class Car():
-#     """A simple car model."""
-#     def __init__(self, manufacturer, model, year):
-#         """Initializes the attributes of the vehicle description."""
-#         self.manufacturer = manufacturer
-#         self.model = model
-#         self.year = year
-#         self.odometer_reading = 0
-#
-#     def get_descriptive_name(self):
-#         """Returns a neatly formatted description."""
-#         long_name = f"{self.year} {self.manufacturer} {self.model}"
-#         return long_name.title()
-#
-#     def read_odometer(self):
-#         """Выводит пробег машины в милях."""
-#         print(f'This car has {self.odometer_reading} miles on it.')
-#
-# my_new_car = Car('audi', 'a4', 2019)
-# print(my_new_car.get_descriptive_name())
-# my_new_car.read_odometer()
-#
-# my_new_car_2 = Car('bmw', 'turbond', 2022)
-# print(my_new_car_2.get_descriptive_name())
-# my_new_car_2.odometer_reading = 45_000
-# my_new_car_2.read_odometer()
-
-
-
-# class Car():
-#     """A simple car model."""
-#     def __init__(self, manufacturer, model, year):
-#         """Initializes the attributes of the vehicle description."""
-#         self.manufacturer = manufacturer
-#         self.model = model
-#         self.year = year
-#         self.odometer_reading = 500
-#
-#     def get_descriptive_name(self):
-#         """Returns a neatly formatted description."""
-#         long_name = f"{self.year} {self.manufacturer} {self.model}"
-#         return long_name.title()
-#
-#     def read_odometer(self):
-#         """Выводит пробег машины в милях."""
-#         print(f'This car has {self.odometer_reading} miles on it.')
-#
-#     def update_odometer(self, mileage):
-#         """Устанавливает на одометре заданное значение.
-# При попытке обратной подкрутки изменение отклоняется."""
-#         if mileage >= self.odometer_reading:
-#             self.odometer_reading = mileage
-#         else:
-#             print("You can't roll back an odometer!")
-#
-#
-# my_new_car = Car('bmw', 'turbond', 2022)
-# print(my_new_car.get_descriptive_name())
-# my_new_car.update_odometer(420)
-# my_new_car.read_odometer()
-
+"""Классы для  автомобилей с бензиновы и электродвигателем."""
 class Car():
-    """A simple car model."""
+    """простая модель автомобиля."""
     def __init__(self, manufacturer, model, year):
-        """Initializes the attributes of the vehicle description."""
         self.manufacturer = manufacturer
         self.model = model
         self.year = year
-        self.odometer_reading = 500
+        self.odometer_reading = 25
 
     def get_descriptive_name(self):
-        """Returns a neatly formatted description."""
+        """Возвращает аккуратно отформатированное имя."""
         long_name = f"{self.year} {self.manufacturer} {self.model}"
         return long_name.title()
 
     def read_odometer(self):
         """Выводит пробег машины в милях."""
-        print(f'This car has {self.odometer_reading} miles on it.')
+        print(f"Данный автомобиль имеет пробег - {self.odometer_reading} км.")
 
     def update_odometer(self, mileage):
-        """Устанавливает на одометре заданное значение.
-При попытке обратной подкрутки изменение отклоняется."""
+        """Устанавливает заданное значение на одометре."""
+        # Устанавливает на одометре заданное значение.
+        # При попытке обратной подкрутки изменение отклоняется.
         if mileage >= self.odometer_reading:
             self.odometer_reading = mileage
         else:
-            print("You can't roll back an odometer!")
+            print("Вы не можете отмотать пробег...стыдно должно быть...")
 
-    def increment_odometr(self, miles):
-        """"Увеличивает показания одометра с заданным приращением."""
+    def increment_odometer(self, miles):
+        """Увеличивает показание одометра с заданным приращением."""
         self.odometer_reading += miles
 
+    def fill_gas_tank(self):
+        print(f"У автомобиля '{self.manufacturer.title()} {self.model.title()}' есть бензобак.")
 
-my_new_car = Car('bmw', 'turbond', 2022)
-print(my_new_car.get_descriptive_name())
+class ElectricCar(Car):
+    """Представляет аспекты машины, специфические для электромобилей."""
+    # Инициализирует атрибуты класса-родителя.
+    # Затем инициализирует атрибуты, специфические для электромобиля.
 
-my_new_car.update_odometer(25_000)
-my_new_car.read_odometer()
+    def __init__(self, manufacturer, model, year):
+        """Инициализирует атрибуты класса родителя."""
+        super().__init__(manufacturer, model, year)
+        self.battery = Battery()
 
-my_new_car.increment_odometr(500)
-my_new_car.read_odometer()
+    def fill_gas_tank(self):
+        print(f"У данного автомобиля нет бензобака.")
 
+class Battery():
+    """Модель аккумулятора авто."""
+    def __init__(self, battery_size = 75):
+        """Инициализирует атрибуты аккумулятора."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Выводит инф. о мощности аккумулятора."""
+        print(f"Заряд аккумулятора равен - {self.battery_size} kWh")
+
+    def get_range(self):
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f"Эта машина может проехать около {range} на полной зарядке.")
